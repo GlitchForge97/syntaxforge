@@ -1,0 +1,407 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="styles.css">
+  <title>SyntaxForge - Forge Your Code Mastery</title>
+  <script src="/_sdk/element_sdk.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600&amp;family=Inter:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet">
+  <style>@view-transition { navigation: auto; }</style>
+  <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
+  <script src="https://cdn.tailwindcss.com" type="text/javascript"></script>
+ </head>
+ <body><!-- Hero Section -->
+  <div class="hero-section" id="heroSection">
+   <div class="hero-content">
+    <h1 class="hero-logo" id="heroTitle">SyntaxForge</h1>
+    <h2 class="hero-tagline" id="heroTagline">Forge Your Code Mastery</h2>
+    <p class="hero-subtitle" id="heroSubtitle">Master Python &amp; C++ from Zero to Hero</p>
+    <div class="hero-features">
+     <div class="hero-feature"><span class="feature-icon">🐍</span>
+      <h3 class="feature-title">Python Mastery</h3>
+      <p class="feature-desc">From basics to advanced frameworks, master Python's elegant syntax and powerful libraries</p>
+     </div>
+     <div class="hero-feature"><span class="feature-icon">⚡</span>
+      <h3 class="feature-title">C++ Excellence</h3>
+      <p class="feature-desc">Dive deep into systems programming, memory management, and high-performance computing</p>
+     </div>
+     <div class="hero-feature"><span class="feature-icon">🚀</span>
+      <h3 class="feature-title">Interactive Learning</h3>
+      <p class="feature-desc">Live code examples, instant feedback, and hands-on practice in a stunning interface</p>
+     </div>
+    </div>
+    <div class="hero-cta"><button class="start-button" onclick="startLearning()"> Begin Your Journey </button>
+    </div>
+   </div>
+  </div><!-- Main Application -->
+  <div class="main-app" id="mainApp">
+   <div class="particles" id="particles"></div>
+   <div class="container"><button class="toggle-sidebar" onclick="toggleSidebar()">☰</button>
+    <aside class="sidebar" id="sidebar">
+     <div class="sidebar-header">
+      <div class="logo" id="platformTitle">
+       SyntaxForge
+      </div>
+      <div class="tagline" id="tagline">
+       Forge Your Code Mastery
+      </div>
+     </div>
+     <div class="search-bar"><span class="search-icon">🔍</span> <input type="text" class="search-input" placeholder="Search topics... (Ctrl+K)" id="searchInput">
+     </div>
+     <div class="progress-stats">
+      <div class="progress-stats-title">
+       📊 Learning Progress
+      </div>
+      <div class="progress-bar">
+       <div class="progress-fill" id="progressFill" style="width: 7%"></div>
+      </div>
+      <div class="progress-text"><span>Completed Topics</span> <span class="progress-percentage" id="progressPercentage">1/14 (7%)</span>
+      </div>
+     </div>
+     <nav class="nav-section">
+      <div class="nav-group">
+       <div class="nav-group-title python-title">
+        🐍 Python Mastery
+       </div>
+       <div class="nav-item active" data-topic="python-basics">
+        Variables &amp; Data Types 
+        <div class="progress-indicator"></div>
+       </div>
+       <div class="nav-item" data-topic="python-control">
+        Control Flow &amp; Loops 
+        <div class="progress-indicator"></div>
+       </div>
+       <div class="nav-item" data-topic="python-functions">
+        Functions &amp; Scope 
+        <div class="progress-indicator"></div>
+       </div>
+       <div class="nav-item" data-topic="python-oop">
+        Object-Oriented Programming 
+        <div class="progress-indicator"></div>
+       </div>
+       <div class="nav-item" data-topic="python-decorators">
+        Decorators &amp; Metaclasses 
+        <div class="progress-indicator"></div>
+       </div>
+       <div class="nav-item" data-topic="python-async">
+        Async Programming 
+        <div class="progress-indicator"></div>
+       </div>
+       <div class="nav-item" data-topic="python-frameworks">
+        Frameworks &amp; Libraries 
+        <div class="progress-indicator"></div>
+       </div>
+      </div>
+      <div class="nav-group">
+       <div class="nav-group-title cpp-title">
+        ⚡ C++ Mastery
+       </div>
+       <div class="nav-item cpp" data-topic="cpp-basics">
+        Syntax &amp; Fundamentals 
+        <div class="progress-indicator"></div>
+       </div>
+       <div class="nav-item cpp" data-topic="cpp-memory">
+        Memory Management 
+        <div class="progress-indicator"></div>
+       </div>
+       <div class="nav-item cpp" data-topic="cpp-stl">
+        Standard Template Library 
+        <div class="progress-indicator"></div>
+       </div>
+       <div class="nav-item cpp" data-topic="cpp-oop">
+        Object-Oriented Design 
+        <div class="progress-indicator"></div>
+       </div>
+       <div class="nav-item cpp" data-topic="cpp-templates">
+        Templates &amp; Generics 
+        <div class="progress-indicator"></div>
+       </div>
+       <div class="nav-item cpp" data-topic="cpp-threading">
+        Multithreading &amp; Concurrency 
+        <div class="progress-indicator"></div>
+       </div>
+       <div class="nav-item cpp" data-topic="cpp-advanced">
+        Advanced Patterns 
+        <div class="progress-indicator"></div>
+       </div>
+      </div>
+     </nav>
+    </aside>
+    <main class="main-content">
+     <header class="content-header">
+      <div class="breadcrumb" id="breadcrumb">
+       Python &gt; Fundamentals
+      </div>
+      <h1 class="content-title" id="contentTitle">Variables &amp; Data Types</h1>
+     </header>
+     <div class="content-area">
+      <div class="content-viewer" id="contentViewer">
+       <div class="section-intro">
+        <h2 class="intro-title">Welcome to Python Fundamentals</h2>
+        <p class="intro-description">Embark on your Python journey by mastering the building blocks of programming. Variables and data types form the foundation of every program you'll ever write. In this comprehensive section, you'll discover how Python's dynamic typing system works and learn to harness the power of different data structures.</p>
+        <div class="intro-highlights">
+         <div class="highlight-item"><span class="highlight-icon">💡</span> <span class="highlight-text">Dynamic Typing System</span>
+         </div>
+         <div class="highlight-item"><span class="highlight-icon">🔧</span> <span class="highlight-text">Built-in Data Types</span>
+         </div>
+         <div class="highlight-item"><span class="highlight-icon">⚡</span> <span class="highlight-text">Type Conversion</span>
+         </div>
+         <div class="highlight-item"><span class="highlight-icon">🎯</span> <span class="highlight-text">Best Practices</span>
+         </div>
+        </div>
+       </div>
+       <div class="content-section">
+        <h2 class="section-title">Understanding Python Variables</h2>
+        <div class="section-content">
+         Python variables are dynamic containers that store data values. Unlike statically typed languages, Python determines the type of a variable at runtime based on the value assigned to it. This flexibility makes Python incredibly powerful for rapid development and prototyping, allowing you to focus on solving problems rather than managing types.
+        </div>
+        <div class="code-block">
+         <div class="code-header"><span class="code-language">Python Interactive</span> <button class="run-button" onclick="runCode(this)">Execute Code</button>
+         </div>
+         <div class="code-content"><textarea class="code-editable"># Variable assignment and dynamic typing
+platform_name = "SyntaxForge"      # String
+current_year = 2025                 # Integer  
+is_learning = True                  # Boolean
+progress_rate = 95.7                # Float
+
+# Python automatically determines types
+print(f"🚀 Welcome to {platform_name}!")
+print(f"📅 Year: {current_year}")
+print(f"📚 Learning Mode: {is_learning}")
+print(f"📊 Progress: {progress_rate}%")
+
+# Type introspection
+print(f"\n🔍 Type Analysis:")
+print(f"platform_name is: {type(platform_name).__name__}")
+print(f"current_year is: {type(current_year).__name__}")
+print(f"is_learning is: {type(is_learning).__name__}")
+print(f"progress_rate is: {type(progress_rate).__name__}")</textarea>
+         </div>
+         <div class="output-area" id="output-1">
+          Click 'Execute Code' to see the magic happen...
+         </div>
+        </div>
+       </div>
+       <div class="content-section">
+        <h2 class="section-title">Data Type Ecosystem</h2>
+        <div class="section-content">
+         Python's rich type system is organized into logical categories that serve different purposes. Understanding these categories helps you choose the right tool for each programming challenge. From simple numbers to complex collections, each type has its unique strengths and use cases.
+        </div>
+        <div class="code-block">
+         <div class="code-header"><span class="code-language">Python Comprehensive</span> <button class="run-button" onclick="runCode(this)">Execute Code</button>
+         </div>
+         <div class="code-content"><textarea class="code-editable"># Comprehensive data type showcase
+print("🔢 NUMERIC UNIVERSE")
+print("=" * 40)
+integer_power = 42
+float_precision = 3.14159265359
+complex_dimension = 3 + 4j
+
+print(f"Integer: {integer_power} (Perfect for counting)")
+print(f"Float: {float_precision} (Decimal precision)")
+print(f"Complex: {complex_dimension} (Mathematical operations)")
+
+print("\n📝 SEQUENCE GALAXY")
+print("=" * 40)
+welcome_message = "Hello, SyntaxForge Learners!"
+skill_levels = ["Beginner", "Intermediate", "Advanced", "Expert"]
+coordinates_3d = (10.5, 20.7, 30.2)
+
+print(f"String: '{welcome_message}' (Length: {len(welcome_message)})")
+print(f"List: {skill_levels} (Mutable sequence)")
+print(f"Tuple: {coordinates_3d} (Immutable sequence)")
+
+print("\n🗂️ MAPPING &amp; COLLECTIONS")
+print("=" * 40)
+developer_profile = {
+    "name": "Code Ninja",
+    "level": "Advanced",
+    "languages": ["Python", "C++", "JavaScript"],
+    "experience_years": 5
+}
+
+unique_technologies = {"Python", "C++", "Machine Learning", "Web Dev", "Python"}
+
+print(f"Dictionary: {developer_profile}")
+print(f"Set (unique items): {unique_technologies}")
+print(f"Set automatically removed duplicate 'Python': {len(unique_technologies)} items")</textarea>
+         </div>
+         <div class="output-area" id="output-2">
+          Ready to explore Python's type system...
+         </div>
+        </div>
+       </div>
+       <div class="content-section">
+        <h2 class="section-title">Advanced Variable Techniques</h2>
+        <div class="section-content">
+         Master the art of variable manipulation with Python's advanced features. These techniques are the hallmarks of professional Python code - elegant, efficient, and expressive. From multiple assignments to the powerful walrus operator, these skills will elevate your programming prowess.
+        </div>
+        <div class="code-block">
+         <div class="code-header"><span class="code-language">Python Advanced</span> <button class="run-button" onclick="runCode(this)">Execute Code</button>
+         </div>
+         <div class="code-content"><textarea class="code-editable"># Advanced variable mastery techniques
+print("🎯 MULTIPLE ASSIGNMENT MAGIC")
+print("=" * 45)
+
+# Elegant multiple assignment
+x, y, z = 100, 200, 300
+print(f"Coordinates: x={x}, y={y}, z={z}")
+
+# The Pythonic swap (no temporary variables needed!)
+alpha, beta = 42, 84
+print(f"Before swap: alpha={alpha}, beta={beta}")
+alpha, beta = beta, alpha
+print(f"After swap: alpha={alpha}, beta={beta}")
+
+print("\n📦 SEQUENCE UNPACKING POWER")
+print("=" * 45)
+
+# Unpacking coordinates
+location_data = (37.7749, -122.4194, "San Francisco")
+latitude, longitude, city_name = location_data
+print(f"📍 Location: {city_name}")
+print(f"🌐 Coordinates: {latitude}°N, {longitude}°W")
+
+# Advanced unpacking with *
+numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+first, second, *middle, second_last, last = numbers
+print(f"First: {first}, Second: {second}")
+print(f"Middle section: {middle}")
+print(f"Last two: {second_last}, {last}")
+
+print("\n🔄 TYPE TRANSFORMATION ALCHEMY")
+print("=" * 45)
+
+# Type conversion showcase
+str_number = "2025"
+converted_int = int(str_number)
+converted_float = float(converted_int)
+converted_bool = bool(converted_int)
+
+print(f"String '{str_number}' → Integer: {converted_int}")
+print(f"Integer {converted_int} → Float: {converted_float}")
+print(f"Integer {converted_int} → Boolean: {converted_bool}")
+
+# Walrus operator (Python 3.8+) - assign and use in one expression
+if (name_length := len("SyntaxForge")) &gt; 8:
+    print(f"🎉 Platform name '{name_length}' characters - Perfect length!")</textarea>
+         </div>
+         <div class="output-area" id="output-3">
+          Prepare for advanced Python techniques...
+         </div>
+        </div>
+       </div>
+       <div class="content-section"><button class="mark-complete-btn" id="markCompleteBtn" onclick="markTopicComplete()"> 🎯 Mark as Complete </button>
+       </div>
+      </div>
+      <div class="right-panel">
+       <div class="panel-header">
+        ⚡ Quick Reference
+       </div>
+       <div class="panel-content">
+        <div class="quick-ref">
+         <div class="quick-ref-title">
+          🐍 Python Data Types
+         </div>
+         <div class="quick-ref-item">
+          int: 42, -17, 0
+         </div>
+         <div class="quick-ref-item">
+          float: 3.14, -2.5, 1e6
+         </div>
+         <div class="quick-ref-item">
+          str: "text", 'char', """multi"""
+         </div>
+         <div class="quick-ref-item">
+          bool: True, False
+         </div>
+         <div class="quick-ref-item">
+          list: [1, 2, 3] (mutable)
+         </div>
+         <div class="quick-ref-item">
+          tuple: (1, 2, 3) (immutable)
+         </div>
+         <div class="quick-ref-item">
+          dict: {"key": "value"}
+         </div>
+         <div class="quick-ref-item">
+          set: {1, 2, 3} (unique)
+         </div>
+        </div>
+        <div class="quick-ref">
+         <div class="quick-ref-title">
+          🔍 Type Functions
+         </div>
+         <div class="quick-ref-item">
+          type(var) - get object type
+         </div>
+         <div class="quick-ref-item">
+          isinstance(var, type) - check type
+         </div>
+         <div class="quick-ref-item">
+          int(), float(), str() - convert
+         </div>
+         <div class="quick-ref-item">
+          len() - get sequence length
+         </div>
+         <div class="quick-ref-item">
+          id() - get object identity
+         </div>
+        </div>
+        <div class="quick-ref">
+         <div class="quick-ref-title">
+          ⚡ Assignment Operators
+         </div>
+         <div class="quick-ref-item">
+          = basic assignment
+         </div>
+         <div class="quick-ref-item">
+          += add and assign
+         </div>
+         <div class="quick-ref-item">
+          -= subtract and assign
+         </div>
+         <div class="quick-ref-item">
+          *= multiply and assign
+         </div>
+         <div class="quick-ref-item">
+          /= divide and assign
+         </div>
+         <div class="quick-ref-item">
+          **= power and assign
+         </div>
+        </div>
+        <div class="quick-ref">
+         <div class="quick-ref-title">
+          🎯 Pro Tips
+         </div>
+         <div class="quick-ref-item">
+          Use f-strings for formatting
+         </div>
+         <div class="quick-ref-item">
+          Prefer tuple unpacking
+         </div>
+         <div class="quick-ref-item">
+          Use walrus operator wisely
+         </div>
+         <div class="quick-ref-item">
+          Check types with isinstance()
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+     <footer class="footer"><span id="footerText">2025 Made by GlitchForge</span>
+     </footer>
+    </main>
+   </div>
+   <div class="ai-assistant" onclick="showAITip()">
+    🤖
+   </div>
+  </div>
+   <script src="script.js" href="script.js"></script>
+ <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9917f2a4103b25b1',t:'MTc2MDk1NzM1OS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script>
+   
+ </body>
+</html>
